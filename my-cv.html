@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmon Hagos Kahsay cv</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy-dark: #0f172a;
+      --navy-card: #1e293b;
+      --blue-accent: #2563eb;
+      --cyan-bright: #38bdf8;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-dark: #334155;
+      --gradient-accent: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+      --gradient-header: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      --radius-lg: 12px;
+      --radius-md: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: #0b1120;
+      color: var(--text-white);
+      line-height: 1.5;
+      padding: 30px 20px;
+      min-height: 100vh;
+    }
+
+    .controls {
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--navy-card);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-dark);
+    }
+
+    .controls-notice {
+      font-size: 0.85rem;
+      color: var(--cyan-bright);
+      font-weight: 500;
+    }
+
+    .btn-action {
+      background: var(--gradient-accent);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .cv-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--navy-dark);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      border: 1px solid var(--border-dark);
+    }
+
+    header {
+      background: var(--gradient-header);
+      padding: 36px 36px 28px 36px;
+      position: relative;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-accent);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .name-title h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-white);
+      margin-bottom: 4px;
+    }
+
+    .name-title .role {
+      font-size: 1rem;
+      color: var(--cyan-bright);
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .clickable-link {
+      color: var(--cyan-bright) !important;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .clickable-link:hover {
+      color: #ffffff !important;
+      text-decoration: underline;
+    }
+
+    .cv-body {
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      background-color: var(--navy-dark);
+    }
+
+    .section-banner {
+      background: var(--gradient-header);
+      border: 1px solid var(--border-dark);
+      border-left: 4px solid var(--cyan-bright);
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-white);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .info-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .job-badge {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--cyan-bright);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .job-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    ul.stylish-list {
+      list-style: none;
+    }
+
+    ul.stylish-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-white);
+    }
+
+    ul.stylish-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--cyan-bright);
+      font-size: 0.75rem;
+      top: 2px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .skill-category {
+      background: var(--navy-card);
+      border: 1px solid var(--border-dark);
+      padding: 16px;
+      border-radius: var(--radius-md);
+    }
+
+    .skill-category-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--cyan-bright);
+      margin-bottom: 10px;
+      letter-spacing: 0.8px;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-white);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--border-dark);
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .link-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border-dark);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .link-card-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .detail-item {
+      background: var(--navy-card);
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-dark);
+    }
+
+    .detail-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--cyan-bright);
+      margin-bottom: 2px;
+    }
+
+    .detail-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      body {
+        background-color: #0b1120 !important;
+        color: #f8fafc !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .controls {
+        display: none !important;
+      }
+
+      .cv-container {
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        background: #0f172a !important;
+      }
+
+      header, .section-banner, .info-card, .skill-category, .link-card, .detail-item, .badge {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      a.clickable-link {
+        color: #38bdf8 !important;
+        text-decoration: underline !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <div class="controls-notice">💡 Save as PDF with "Background graphics" checked to preserve formatting and active links.</div>
+    <button class="btn-action" id="printBtn">Download PDF / Print</button>
+  </div>
+
+  <div class="cv-container">
+    <header>
+      <div class="header-content">
+        <div class="name-title">
+          <h1>Filmon Hagos Kahsay</h1>
+          <div class="role">IT Help Desk & Technical Support Specialist</div>
+        </div>
+        <div class="contact-details">
+          <div class="contact-item">Cairo, Egypt</div>
+          <div class="contact-item">+201222508266</div>
+          <div class="contact-item">
+            <a href="mailto:fhagos45@gmail.com" class="clickable-link">fhagos45@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:filmonhagos45@hotmail.com" class="clickable-link">filmonhagos45@hotmail.com</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cv-body">
+      <section>
+        <div class="section-banner">
+          <div class="section-title">Verified Portfolio & Online CV Links</div>
+        </div>
+        <div class="links-grid">
+          <div class="link-card">
+            <div class="link-card-title">Media & Content Portfolio</div>
+            <a href="https://fhagos45-wq.github.io/TCBMEDIA/" target="_blank" class="clickable-link">
+              🔗 Open TCBMEDIA Portal ↗
+            </a>
+          </div>
+
+          <div class="link-card">
+            <div class="link-card-title">Web Application Portfolio</div>
+            <a href="https://tcb.freedev.app/" target="_blank" class="clickable-link">
+              🔗 Open TCB FreeDev App ↗
+            </a>
+          </div>
+
+          <div class="link-card">
+            <div class="link-card-title">Interactive Source Code / Web CV</div>
+            <a href="https://fhagos45-wq.github.io/TCBMEDIA/" target="_blank" class="clickable-link">
+              🔗 View Online CV & Code ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-banner">
+          <div class="section-title">Professional Profile</div>
+        </div>
+        <div class="info-card" style="margin-bottom: 0;">
+          <p class="job-desc" style="margin-bottom: 10px; color: var(--text-white);">
+            IT Help Desk & Technical Support Specialist with 8 years of hands-on experience supporting computer users, deploying IT systems, and maintaining hardware and networking environments. Experienced in desktop/laptop staging, Windows OS configuration, hardware repairs, webcam setup, and full installation, cabling, maintenance, and repair of CCTV security camera surveillance systems.
+          </p>
+          <p class="job-desc" style="margin-bottom: 0;">
+            Also highly skilled as an OBS Studio Master/Operator supporting live computer-based broadcasting environments, alongside technical experience in web development, WordPress, graphic design, and video editing.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-banner">
+          <div class="section-title">Professional Experience</div>
+        </div>
+
+        <div class="info-card">
+          <div class="job-head">
+            <div class="job-title">IT Help Desk / IT Support Specialist</div>
+            <div class="job-badge">8 Years Experience</div>
+          </div>
+          <p class="job-desc">Provide comprehensive technical support for computer hardware, peripherals, operating systems, surveillance equipment, and end-users.</p>
+          <ul class="stylish-list">
+            <li>Install, configure, troubleshoot, and repair webcams, IP cameras, security cameras, and CCTV surveillance systems.</li>
+            <li>Prepare, configure, maintain, troubleshoot, and repair desktop computers, laptops, and peripheral hardware.</li>
+            <li>Install and configure Windows operating systems, software applications, drivers, and system updates.</li>
+            <li>Diagnose and resolve hardware failures, system crashes, and operating system errors.</li>
+            <li>Support and troubleshoot local area network (LAN) and wide area network (WAN) connections and equipment.</li>
+            <li>Provide rapid remote technical assistance to resolve end-user technical problems.</li>
+            <li>Perform routine hardware maintenance, component replacements, and preventative care.</li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 0;">
+          <div class="job-head">
+            <div class="job-title">OBS Studio Master / Operator</div>
+            <div class="job-badge">Live Media Specialist</div>
+          </div>
+          <p class="job-desc">Operate and manage OBS Studio and audio/video hardware configurations for live broadcast environments.</p>
+          <ul class="stylish-list">
+            <li>Configure camera feeds, capture cards, webcams, audio interfaces, and scene transitions.</li>
+            <li>Prepare technical computer hardware and network connections for optimal live streaming performance.</li>
+            <li>Monitor audio and video feeds in real time and troubleshoot technical faults during live sessions.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-banner">
+          <div class="section-title">Technical Skills</div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-category-title">Surveillance & Hardware</div>
+            <div class="badge-container">
+              <span class="badge">CCTV Installation</span>
+              <span class="badge">Security Cameras</span>
+              <span class="badge">Webcam Setup</span>
+              <span class="badge">Camera Repair</span>
+              <span class="badge">Hardware Troubleshooting</span>
+              <span class="badge">Desktop & Laptop Repair</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">IT Systems & Networking</div>
+            <div class="badge-container">
+              <span class="badge">Windows OS</span>
+              <span class="badge">LAN / WAN</span>
+              <span class="badge">Software Config</span>
+              <span class="badge">System Maintenance</span>
+              <span class="badge">Remote Tech Support</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">Web & Digital Media</div>
+            <div class="badge-container">
+              <span class="badge">HTML / CSS / JS</span>
+              <span class="badge">WordPress</span>
+              <span class="badge">Photoshop</span>
+              <span class="badge">Illustrator</span>
+              <span class="badge">Premiere Pro</span>
+              <span class="badge">After Effects</span>
+              <span class="badge">OBS Studio</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-title">Productivity Suites</div>
+            <div class="badge-container">
+              <span class="badge">Microsoft Word</span>
+              <span class="badge">Microsoft Excel</span>
+              <span class="badge">Microsoft PowerPoint</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-banner">
+          <div class="section-title">Education & Key Details</div>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <div class="detail-label">Education</div>
+            <div class="detail-value">B.Sc. in Computer Science</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Mekelle University (2018)</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-label">Languages</div>
+            <div class="detail-value">English, Arabic, Amharic, Tigrinya</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-label">Location / Nationality</div>
+            <div class="detail-value">Cairo, Egypt (Ethiopian)</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-label">References</div>
+            <div class="detail-value">Available upon request</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const printBtn = document.getElementById('printBtn');
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+    });
+  </script>
+</body>
+</html>
+
+```
